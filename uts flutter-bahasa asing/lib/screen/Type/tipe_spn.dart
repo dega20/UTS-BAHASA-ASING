@@ -5,7 +5,7 @@ import 'package:uts/screen/level/level_kuis_eng.dart';
 import 'package:uts/screen/level/level_kuis_spn.dart';
 import 'package:uts/screen/level/level_audio_spn.dart';
 import 'package:uts/widget/next_button_card.dart';
-import 'package:uts/screen/audio_screen.dart';
+import 'package:uts/screen/audio/audio_screen.dart';
 
 class LearningTypePageSpn extends StatelessWidget {
   const LearningTypePageSpn({super.key});

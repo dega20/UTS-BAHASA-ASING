@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:uts/screen/Type/tipe_spn.dart';
 // ignore: unused_import
 import 'package:uts/screen/Type/tipe_eng.dart';
+import 'package:uts/widget/card_button.dart';
+import 'package:uts/widget/card_button2.dart';
 import 'package:uts/widget/next_button_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -30,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24),
             ),
             const SizedBox(height: 10),
-            RectangularButton(
+            CardButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -38,9 +40,10 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               label: 'Bahasa Inggris',
+              image: 'assets/image/ing.jpg',
             ),
             const SizedBox(height: 10),
-            RectangularButton(
+            CardButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -48,9 +51,10 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               label: 'Bahasa Spanyol',
+              image: 'assets/image/spn.png',
             ),
             const SizedBox(height: 10),
-            RectangularButton(
+            CardButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -58,6 +62,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               label: 'Bahasa Korea',
+              image: 'assets/image/jp.png',
             ),
           ],
         ),

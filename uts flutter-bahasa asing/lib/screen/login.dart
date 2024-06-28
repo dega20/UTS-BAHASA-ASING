@@ -4,8 +4,6 @@ import 'package:uts/screen/startpage.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,12 +44,14 @@ class FormWidget extends StatefulWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
   final String submitButtonText;
+  final bool isRegister;
 
   FormWidget({
     required this.title,
     required this.usernameController,
     required this.passwordController,
     required this.submitButtonText,
+    required this.isRegister,
   });
 
   @override
@@ -59,6 +59,14 @@ class FormWidget extends StatefulWidget {
 }
 
 class _FormWidgetState extends State<FormWidget> {
+  late TextEditingController _confirmPasswordController;
+
+  @override
+  void initState() {
+    super.initState();
+    _confirmPasswordController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -81,11 +89,31 @@ class _FormWidgetState extends State<FormWidget> {
               prefixIcon: Icon(Icons.lock),
             ),
           ),
+          if (widget.isRegister)
+            TextField(
+              controller: _confirmPasswordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Konfirmasi Password',
+                prefixIcon: Icon(Icons.lock),
+              ),
+            ),
           SizedBox(height: 20.0),
           ElevatedButton(
             onPressed: () {
               final username = widget.usernameController.text;
               final password = widget.passwordController.text;
+              if (widget.isRegister) {
+                final confirmPassword = _confirmPasswordController.text;
+                if (password!= confirmPassword) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Password tidak sama'),
+                    ),
+                  );
+                  return;
+                }
+              }
               print('${widget.title}: $username, $password');
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(builder: (_) => const HomeScreen()),
@@ -127,6 +155,7 @@ class LoginForm extends StatelessWidget {
       usernameController: usernameController,
       passwordController: passwordController,
       submitButtonText: 'Login',
+      isRegister: false,
     );
   }
 }
@@ -141,6 +170,7 @@ class RegisterForm extends StatelessWidget {
       usernameController: usernameController,
       passwordController: passwordController,
       submitButtonText: 'Daftar',
+      isRegister: true,
     );
   }
 }

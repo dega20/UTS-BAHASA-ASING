@@ -6,7 +6,7 @@ import 'package:uts/screen/quiz/quiz_screen_eng_hard.dart';
 import 'package:uts/screen/quiz/quiz_screen_eng_med.dart';
 import 'package:uts/screen/Type/tipe_eng.dart';
 import 'package:uts/widget/next_button_card.dart';
-import 'package:uts/screen/audio_screen.dart';
+import 'package:uts/screen/audio/audio_screen.dart';
 
 class DifficultyPageEng extends StatelessWidget {
   const DifficultyPageEng({super.key});

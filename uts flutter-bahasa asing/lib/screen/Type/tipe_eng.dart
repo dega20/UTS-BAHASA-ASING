@@ -1,10 +1,11 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:uts/screen/kosakata_screen.dart';
 import 'package:uts/screen/level/level_kuis_eng.dart';
 import 'package:uts/screen/level/level_audio_eng.dart';
 import 'package:uts/widget/next_button_card.dart';
-import 'package:uts/screen/audio_screen.dart';
+import 'package:uts/screen/audio/audio_screen.dart';
 
 class LearningTypePageEng extends StatelessWidget {
   const LearningTypePageEng({super.key});
@@ -20,6 +21,17 @@ class LearningTypePageEng extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            RectangularButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VocabularyList()),
+                );
+              },
+
+              label: 'Kosakata',
+            ),
+            const SizedBox(height: 10),
             RectangularButton(
               onPressed: () {
                 Navigator.push(

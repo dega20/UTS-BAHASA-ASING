@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 
 class AudioScreenSpnEz extends StatefulWidget {
   const AudioScreenSpnEz({super.key});
@@ -12,36 +13,46 @@ class _AudioScreenSpnEzState extends State<AudioScreenSpnEz> {
     {
       'Spain': 'Abrir',
       'Bahasa': 'Membuka',
+      'Audio': 'assets/sound/spiderman-meme-song.mp3',
     },
     {
       'Spain': 'Agua',
       'Bahasa': 'Air',
+      'Audio': 'assets/sound/agua.mp3',
     },
     {
       'Spain': 'Ahora',
       'Bahasa': 'Sekarang',
+      'Audio': 'assets/sound/ahora.mp3',
     },
     {
       'Spain': 'Alto',
       'Bahasa': 'Tinggi',
+      'Audio': 'assets/sound/alto.mp3',
     },
     {
       'Spain': 'Amigo',
       'Bahasa': 'Teman',
+      'Audio': 'assets/sound/amigo.mp3',
     },
     {
       'Spain': 'Amor',
       'Bahasa': 'Cinta',
+      'Audio': 'assets/sound/amor.mp3',
     },
     {
       'Spain': 'Aprender',
       'Bahasa': 'Belajar',
+      'Audio': 'assets/sound/aprender.mp3',
     },
     {
       'Spain': 'Ayudar',
       'Bahasa': 'Membantu',
+      'Audio': 'assets/sound/ayudar.mp3',
     },
   ];
+
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +89,9 @@ class _AudioScreenSpnEzState extends State<AudioScreenSpnEz> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {
-                        // Add your button onPressed logic here
+                      onPressed: () async {
+                        await _audioPlayer.setAsset(verb['Audio']!);
+                        _audioPlayer.play();
                       },
                       icon: const Icon(Icons.volume_up),
                     ),

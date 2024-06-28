@@ -6,7 +6,7 @@ import 'package:uts/screen/Type/tipe_spn.dart';
 import 'package:uts/screen/quiz/quiz_screen_spn_hard.dart';
 import 'package:uts/screen/quiz/quiz_screen_spn_med.dart';
 import 'package:uts/widget/next_button_card.dart';
-import 'package:uts/screen/audio_screen.dart';
+import 'package:uts/screen/audio/audio_screen.dart';
 
 class DifficultyPageSpn extends StatelessWidget {
   const DifficultyPageSpn({super.key});
