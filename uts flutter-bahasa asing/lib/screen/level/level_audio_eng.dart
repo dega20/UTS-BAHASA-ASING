@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:uts/screen/audio/audio_coba.dart';
 import 'package:uts/screen/audio/audio_screen_eng_ez.dart';
 import 'package:uts/screen/audio/audio_screen_eng_med.dart';
 import 'package:uts/screen/audio/audio_screen_eng_hard.dart';
+import 'package:uts/widget/level-button.dart';
 import 'package:uts/widget/next_button_card.dart';
 
 class DifficultyPageAudioEng extends StatelessWidget {
@@ -18,17 +20,17 @@ class DifficultyPageAudioEng extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AudioScreenEngEz()),
+                  MaterialPageRoute(builder: (context) => Aucoba()),
                 );
               },
               label: 'Easy',
             ),
             const SizedBox(height: 5),
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -38,7 +40,7 @@ class DifficultyPageAudioEng extends StatelessWidget {
               label: 'Medium',
             ),
             const SizedBox(height: 5),
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,

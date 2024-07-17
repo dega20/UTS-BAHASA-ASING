@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:uts/models/pertanyaanquiz/pertanyaan_spn_ez.dart';
+import 'package:uts/score/score_list.dart';
 import '../quiz/quiz_screen_spn_ez.dart';
 import 'package:uts/screen/startpage.dart';
 import 'package:uts/widget/next_button_card.dart';
@@ -72,6 +73,15 @@ class ResultScreen extends StatelessWidget {
               );
             },
             label: resultText, // Use the resultText variable here
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => ListScore()),
+              );
+            },
+            child: Text('List score'),
           ),
           const SizedBox(height: 20),
           ElevatedButton(

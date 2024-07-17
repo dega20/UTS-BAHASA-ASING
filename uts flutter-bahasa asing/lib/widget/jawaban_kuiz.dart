@@ -13,17 +13,18 @@ import 'package:flutter/material.dart';
       correct answer should be highlighted as green
 */
 
-class AnswerCard extends StatelessWidget {
-  const AnswerCard({
+
+class AnswerKuiz extends StatelessWidget {
+  const AnswerKuiz({
     super.key,
-    required this.questionAudio,
+    required this.questionText,
     required this.isSelected,
     required this.currentIndex,
     required this.correctAnswerIndex,
     required this.selectedAnswerIndex,
   });
 
-  final String questionAudio;
+  final String questionText;
   final bool isSelected;
   final int? correctAnswerIndex;
   final int? selectedAnswerIndex;
@@ -57,7 +58,7 @@ class AnswerCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      questionAudio,
+                      questionText,
                       style: const TextStyle(
                         fontSize: 16,
                       ),
@@ -87,7 +88,7 @@ class AnswerCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      questionAudio,
+                      questionText,
                       style: const TextStyle(
                         fontSize: 16,
                       ),

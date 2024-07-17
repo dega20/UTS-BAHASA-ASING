@@ -1,10 +1,13 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:uts/models/quiz_screen.dart';
 import 'package:uts/screen/quiz/quiz_screen_eng_ez.dart';
 import 'package:uts/screen/quiz/quiz_screen_eng_hard.dart';
 import 'package:uts/screen/quiz/quiz_screen_eng_med.dart';
 import 'package:uts/screen/Type/tipe_eng.dart';
+import 'package:uts/widget/answer_kuis_button.dart';
+import 'package:uts/widget/level-button.dart';
 import 'package:uts/widget/next_button_card.dart';
 import 'package:uts/screen/audio/audio_screen.dart';
 
@@ -22,17 +25,17 @@ class DifficultyPageEng extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuizScreenEngEz()),
+                  MaterialPageRoute(builder: (context) => QuizScreen()),
                 );
               },
               label: 'Easy',
             ),
             const SizedBox(height: 5),
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -42,7 +45,7 @@ class DifficultyPageEng extends StatelessWidget {
               label: 'Medium',
             ),
             const SizedBox(height: 5),
-            RectangularButton(
+            LevelButton(
               onPressed: () {
                 Navigator.push(
                   context,
